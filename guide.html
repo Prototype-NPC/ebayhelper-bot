@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EbayHelper Bot - User Guide</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "brand-blue": "#0064d2",
+          "brand-blue-dark": "#004493",
+          "brand-green": "#5cb836",
+          "brand-yellow": "#f5af02",
+          "brand-red": "#e53238",
+          "surface": "#ffffff",
+          "surface-alt": "#f7f9fc",
+          "text-primary": "#1a1a2e",
+          "text-secondary": "#5a607f",
+          "border-light": "#e5e7eb",
+        },
+        fontFamily: { "sans": ["Inter", "sans-serif"] },
+      },
+    },
+  }
+</script>
+<style>
+  body { background-color: #ffffff; color: #1a1a2e; font-family: 'Inter', sans-serif; }
+  .ebay-gradient { background: linear-gradient(135deg, #0064d2 0%, #004493 100%); }
+  html { scroll-behavior: smooth; }
+  .cmd { background: #f0f4ff; border: 1px solid #d8e2ff; border-radius: 6px; padding: 2px 8px; font-family: monospace; font-size: 13px; color: #0064d2; font-weight: 600; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- Nav -->
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-border-light h-16">
+<div class="flex justify-between items-center max-w-4xl mx-auto px-6 h-full">
+<a href="index.html" class="flex items-center gap-2 text-2xl font-bold tracking-tighter text-brand-blue no-underline">
+<span class="text-3xl">🤖</span>
+EbayHelper
+</a>
+<div class="flex items-center gap-4">
+<a href="index.html" class="text-text-secondary hover:text-brand-blue text-sm font-semibold no-underline">Home</a>
+<a href="https://t.me/Ebayhelper111bot" target="_blank" class="flex items-center gap-2 ebay-gradient text-white px-4 py-2 rounded-lg font-bold text-xs uppercase tracking-wider no-underline">
+<span class="text-base">🤖</span>
+Launch Bot
+</a>
+</div>
+</div>
+</nav>
+
+<!-- Header -->
+<section class="pt-28 pb-12 px-6 bg-gradient-to-br from-white via-blue-50/40 to-green-50/30">
+<div class="max-w-3xl mx-auto text-center">
+<span class="inline-block font-bold tracking-[0.2em] text-brand-blue uppercase mb-4 text-xs">User Guide</span>
+<h1 class="text-4xl md:text-5xl font-bold tracking-tight text-text-primary mb-4">EbayHelper Bot Manual</h1>
+<p class="text-lg text-text-secondary max-w-xl mx-auto">Everything you need to know to start listing, selling, and getting paid.</p>
+</div>
+</section>
+
+<!-- Table of Contents -->
+<div class="max-w-3xl mx-auto px-6 py-8">
+<div class="bg-surface-alt rounded-2xl border border-border-light p-6 mb-12">
+<h3 class="font-bold text-text-primary mb-4">Quick Navigation</h3>
+<div class="grid sm:grid-cols-2 gap-2">
+<a href="#what-is" class="flex items-center gap-2 text-sm text-brand-blue hover:underline no-underline"><span class="material-symbols-outlined text-sm">arrow_forward</span> What is EbayHelper?</a>
+<a href="#why-our-account" class="flex items-center gap-2 text-sm text-brand-blue hover:underline no-underline"><span class="material-symbols-outlined text-sm">arrow_forward</span> Why We Use Our Account</a>
+<a href="#fees" class="flex items-center gap-2 text-sm text-brand-blue hover:underline no-underline"><span class="material-symbols-outlined text-sm">arrow_forward</span> How the Fees Work</a>
+<a href="#access" class="flex items-center gap-2 text-sm text-brand-blue hover:underline no-underline"><span class="material-symbols-outlined text-sm">arrow_forward</span> Getting Access</a>
+<a href="#create-listing" class="flex items-center gap-2 text-sm text-brand-blue hover:underline no-underline"><span class="material-symbols-outlined text-sm">arrow_forward</span> Creating a Listing</a>
+<a href="#photo-tips" class="flex items-center gap-2 text-sm text-brand-blue hover:underline no-underline"><span class="material-symbols-outlined text-sm">arrow_forward</span> Photo Tips</a>
+<a href="#manage" class="flex items-center gap-2 text-sm text-brand-blue hover:underline no-underline"><span class="material-symbols-outlined text-sm">arrow_forward</span> Managing Listings</a>
+<a href="#sales" class="flex items-center gap-2 text-sm text-brand-blue hover:underline no-underline"><span class="material-symbols-outlined text-sm">arrow_forward</span> Tracking Sales</a>
+<a href="#notifications" class="flex items-center gap-2 text-sm text-brand-blue hover:underline no-underline"><span class="material-symbols-outlined text-sm">arrow_forward</span> Getting Notified</a>
+<a href="#commands" class="flex items-center gap-2 text-sm text-brand-blue hover:underline no-underline"><span class="material-symbols-outlined text-sm">arrow_forward</span> Commands Reference</a>
+<a href="#faq" class="flex items-center gap-2 text-sm text-brand-blue hover:underline no-underline"><span class="material-symbols-outlined text-sm">arrow_forward</span> FAQ</a>
+</div>
+</div>
+
+<!-- 1. What is EbayHelper? -->
+<section id="what-is" class="mb-14">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full ebay-gradient flex items-center justify-center text-white font-bold text-sm">1</div>
+<h2 class="text-2xl font-bold text-text-primary">What is EbayHelper?</h2>
+</div>
+<div class="pl-[52px]">
+<p class="text-text-secondary leading-relaxed mb-4">EbayHelper (<a href="https://t.me/Ebayhelper111bot" target="_blank" class="text-brand-blue font-semibold hover:underline">@Ebayhelper111bot</a>) is a Telegram bot that lets you sell your clothing on eBay Canada without needing your own eBay account, without dealing with listings, shipping policies, or payment setup — and without ever leaving Telegram.</p>
+<p class="text-text-secondary leading-relaxed mb-4">You send photos of your item. Our AI reads the photos, writes the full listing for you, and posts it live on eBay Canada in under 2 minutes. When it sells, you get paid your cut automatically.</p>
+<p class="text-text-secondary leading-relaxed mb-4">Think of it like a consignment store, except it's on eBay, it's automated, and you keep 77% of every sale.</p>
+</div>
+</section>
+
+<!-- Why Our Account -->
+<section id="why-our-account" class="mb-14">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-brand-yellow flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+<span class="material-symbols-outlined text-white text-lg">help</span>
+</div>
+<h2 class="text-2xl font-bold text-text-primary">Why We Use Our eBay Account (Not Yours)</h2>
+</div>
+<div class="pl-[52px]">
+<p class="text-text-secondary leading-relaxed mb-4">When you sell on eBay, the platform requires a verified seller account with an established history, connected payment method, shipping policies, and return policies already configured. Setting all of this up from scratch takes days, and new accounts get limited until they build trust with eBay.</p>
+<p class="text-text-secondary leading-relaxed mb-4">Our account already has all of this in place — verified seller status, shipping policies, payment processing, and a transaction history. When your item is listed through us, it benefits from that credibility immediately. Your listing goes live faster, gets better placement in search results, and buyers trust it more than a brand new account with zero history.</p>
+<p class="text-text-secondary leading-relaxed">This also means you never have to deal with eBay's seller interface, policy compliance, or account management. You just send photos and collect your money.</p>
+</div>
+</section>
+
+<!-- 2. How the Fees Work -->
+<section id="fees" class="mb-14">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-brand-yellow flex items-center justify-center text-white font-bold text-sm">2</div>
+<h2 class="text-2xl font-bold text-text-primary">How the Fees Work</h2>
+</div>
+<div class="pl-[52px]">
+<p class="text-text-secondary leading-relaxed mb-4">Every sale is split three ways:</p>
+<div class="bg-surface-alt rounded-xl border border-border-light p-5 mb-4">
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-sm bg-brand-red"></div>
+<span class="text-sm font-semibold text-text-primary">eBay — platform fee, charged to all sellers</span>
+</div>
+<span class="text-sm font-bold text-brand-red">~13%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-sm bg-brand-blue"></div>
+<span class="text-sm font-semibold text-text-primary">Us — account management, listings, disputes</span>
+</div>
+<span class="text-sm font-bold text-brand-blue">10%</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-sm bg-brand-green"></div>
+<span class="text-sm font-bold text-text-primary">You keep</span>
+</div>
+<span class="text-lg font-bold text-brand-green">~77%</span>
+</div>
+</div>
+</div>
+<div class="bg-blue-50 rounded-lg p-4 border border-brand-blue/10">
+<p class="text-sm text-text-secondary"><strong class="text-text-primary">Example:</strong> Your hoodie sells for <strong>$100</strong> → eBay takes $13, we take $10, you receive <strong class="text-brand-green">$77</strong>.</p>
+</div>
+<p class="text-text-secondary text-sm leading-relaxed mt-4">There are no listing fees, no upfront costs, and no charge if the item doesn't sell. You only pay when it sells.</p>
+</div>
+</section>
+
+<!-- 3. Getting Access -->
+<section id="access" class="mb-14">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full ebay-gradient flex items-center justify-center text-white font-bold text-sm">3</div>
+<h2 class="text-2xl font-bold text-text-primary">Getting Access</h2>
+</div>
+<div class="pl-[52px]">
+<p class="text-text-secondary leading-relaxed mb-4">EbayHelper is invite-only. Here's how to get in:</p>
+<ol class="space-y-3 text-text-secondary">
+<li class="flex items-start gap-3">
+<span class="w-6 h-6 rounded-full bg-surface-alt border border-border-light flex items-center justify-center text-xs font-bold text-text-primary flex-shrink-0 mt-0.5">1</span>
+<span>Open <a href="https://t.me/Ebayhelper111bot" target="_blank" class="text-brand-blue font-semibold hover:underline">@Ebayhelper111bot</a> on Telegram and tap <strong>Start</strong></span>
+</li>
+<li class="flex items-start gap-3">
+<span class="w-6 h-6 rounded-full bg-surface-alt border border-border-light flex items-center justify-center text-xs font-bold text-text-primary flex-shrink-0 mt-0.5">2</span>
+<span>Your request is automatically sent to the admin — no extra steps needed</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="w-6 h-6 rounded-full bg-surface-alt border border-border-light flex items-center justify-center text-xs font-bold text-text-primary flex-shrink-0 mt-0.5">3</span>
+<span>Wait for approval. You'll be notified when you're in</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="w-6 h-6 rounded-full bg-surface-alt border border-border-light flex items-center justify-center text-xs font-bold text-text-primary flex-shrink-0 mt-0.5">4</span>
+<span>Once approved, start listing immediately</span>
+</li>
+</ol>
+</div>
+</section>
+
+<!-- 4. Creating a Listing -->
+<section id="create-listing" class="mb-14">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-brand-green flex items-center justify-center text-white font-bold text-sm">4</div>
+<h2 class="text-2xl font-bold text-text-primary">How to Create a Listing</h2>
+</div>
+<div class="pl-[52px]">
+<p class="text-text-secondary leading-relaxed mb-6">The full listing flow, step by step:</p>
+
+<div class="space-y-4">
+<div class="bg-surface-alt rounded-xl border border-border-light p-5">
+<h4 class="font-bold text-text-primary mb-2 flex items-center gap-2"><span class="text-brand-blue">Step 1</span> — Start a new listing</h4>
+<p class="text-sm text-text-secondary">Send <span class="cmd">/list</span> or <span class="cmd">/start</span> to begin.</p>
+</div>
+
+<div class="bg-surface-alt rounded-xl border border-border-light p-5">
+<h4 class="font-bold text-text-primary mb-2 flex items-center gap-2"><span class="text-brand-blue">Step 2</span> — Send your photos</h4>
+<p class="text-sm text-text-secondary mb-2">Send up to <strong>10 photos</strong> of your item. Include:</p>
+<ul class="text-sm text-text-secondary space-y-1 ml-4">
+<li>Front, back, and side views</li>
+<li>Size tag, brand tag, material tag</li>
+<li>Any flaws or damage (be honest!)</li>
+</ul>
+</div>
+
+<div class="bg-surface-alt rounded-xl border border-border-light p-5">
+<h4 class="font-bold text-text-primary mb-2 flex items-center gap-2"><span class="text-brand-blue">Step 3</span> — Finish uploading</h4>
+<p class="text-sm text-text-secondary">Send <span class="cmd">/done</span> when all photos are uploaded.</p>
+</div>
+
+<div class="bg-surface-alt rounded-xl border border-border-light p-5">
+<h4 class="font-bold text-text-primary mb-2 flex items-center gap-2"><span class="text-brand-blue">Step 4</span> — Review AI suggestions</h4>
+<p class="text-sm text-text-secondary mb-2">AI analyzes your photos and suggests:</p>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-2">
+<span class="text-xs bg-blue-50 text-brand-blue px-2 py-1 rounded-md font-medium text-center">Title</span>
+<span class="text-xs bg-blue-50 text-brand-blue px-2 py-1 rounded-md font-medium text-center">Description</span>
+<span class="text-xs bg-blue-50 text-brand-blue px-2 py-1 rounded-md font-medium text-center">Brand</span>
+<span class="text-xs bg-blue-50 text-brand-blue px-2 py-1 rounded-md font-medium text-center">Category</span>
+<span class="text-xs bg-blue-50 text-brand-blue px-2 py-1 rounded-md font-medium text-center">Style</span>
+<span class="text-xs bg-blue-50 text-brand-blue px-2 py-1 rounded-md font-medium text-center">Department</span>
+<span class="text-xs bg-blue-50 text-brand-blue px-2 py-1 rounded-md font-medium text-center">Color</span>
+<span class="text-xs bg-blue-50 text-brand-blue px-2 py-1 rounded-md font-medium text-center">Size</span>
+<span class="text-xs bg-blue-50 text-brand-blue px-2 py-1 rounded-md font-medium text-center">Material</span>
+</div>
+</div>
+
+<div class="bg-surface-alt rounded-xl border border-border-light p-5">
+<h4 class="font-bold text-text-primary mb-2 flex items-center gap-2"><span class="text-brand-blue">Step 5</span> — Approve or override</h4>
+<p class="text-sm text-text-secondary mb-2">Happy with everything? Send <span class="cmd">/approve</span> to accept all fields.</p>
+<p class="text-sm text-text-secondary">Want to change something? Use override commands:</p>
+<div class="flex flex-wrap gap-1.5 mt-2">
+<span class="cmd">/title</span>
+<span class="cmd">/brand</span>
+<span class="cmd">/size</span>
+<span class="cmd">/color</span>
+<span class="cmd">/category</span>
+<span class="cmd">/description</span>
+</div>
+</div>
+
+<div class="bg-surface-alt rounded-xl border border-border-light p-5">
+<h4 class="font-bold text-text-primary mb-2 flex items-center gap-2"><span class="text-brand-blue">Step 6</span> — Set your price</h4>
+<p class="text-sm text-text-secondary">Enter your asking price. The AI will suggest one based on eBay sold data, but you can set whatever you want.</p>
+</div>
+
+<div class="bg-surface-alt rounded-xl border border-border-light p-5">
+<h4 class="font-bold text-text-primary mb-2 flex items-center gap-2"><span class="text-brand-blue">Step 7</span> — Condition & offers</h4>
+<p class="text-sm text-text-secondary mb-2">Choose the item condition:</p>
+<div class="flex flex-wrap gap-2 mb-3">
+<span class="text-xs bg-green-50 text-brand-green px-3 py-1 rounded-full font-semibold">New</span>
+<span class="text-xs bg-green-50 text-brand-green px-3 py-1 rounded-full font-semibold">Like New</span>
+<span class="text-xs bg-yellow-50 text-brand-yellow px-3 py-1 rounded-full font-semibold">Good</span>
+<span class="text-xs bg-red-50 text-brand-red px-3 py-1 rounded-full font-semibold">Acceptable</span>
+</div>
+<p class="text-sm text-text-secondary">Then choose whether to accept offers from buyers and set your minimum acceptable price.</p>
+</div>
+
+<div class="bg-surface-alt rounded-xl border border-border-light p-5">
+<h4 class="font-bold text-text-primary mb-2 flex items-center gap-2"><span class="text-brand-blue">Step 8</span> — Promote (optional)</h4>
+<p class="text-sm text-text-secondary">Optionally promote your listing with eBay Ads. You choose a percentage — the higher the %, the more visibility. You only pay the promotion fee if the item actually sells.</p>
+</div>
+
+<div class="bg-brand-green/5 rounded-xl border border-brand-green/20 p-5">
+<h4 class="font-bold text-text-primary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-green" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-brand-green">Step 9</span> — Confirm & go live
+</h4>
+<p class="text-sm text-text-secondary">Review everything one last time. Hit confirm and your listing goes live on eBay Canada instantly.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 5. Photo Tips -->
+<section id="photo-tips" class="mb-14">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-brand-yellow flex items-center justify-center text-white font-bold text-sm">5</div>
+<h2 class="text-2xl font-bold text-text-primary">Photo Tips for Best Results</h2>
+</div>
+<div class="pl-[52px]">
+<p class="text-text-secondary leading-relaxed mb-4">Better photos = better AI results = faster sales. Here's what to shoot:</p>
+<div class="grid sm:grid-cols-2 gap-3">
+<div class="flex items-start gap-3 bg-surface-alt rounded-lg p-4 border border-border-light">
+<span class="material-symbols-outlined text-brand-blue mt-0.5">photo_camera</span>
+<div>
+<p class="font-semibold text-text-primary text-sm">Front, back, side</p>
+<p class="text-xs text-text-secondary">Full item from multiple angles</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-surface-alt rounded-lg p-4 border border-border-light">
+<span class="material-symbols-outlined text-brand-yellow mt-0.5">label</span>
+<div>
+<p class="font-semibold text-text-primary text-sm">Size tag close-up</p>
+<p class="text-xs text-text-secondary">AI reads the size directly from the tag</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-surface-alt rounded-lg p-4 border border-border-light">
+<span class="material-symbols-outlined text-brand-green mt-0.5">checkroom</span>
+<div>
+<p class="font-semibold text-text-primary text-sm">Material / fabric tag</p>
+<p class="text-xs text-text-secondary">Helps AI identify composition</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-surface-alt rounded-lg p-4 border border-border-light">
+<span class="material-symbols-outlined text-brand-blue mt-0.5">branding_watermark</span>
+<div>
+<p class="font-semibold text-text-primary text-sm">Brand tag / logo</p>
+<p class="text-xs text-text-secondary">Clear shot of the brand name</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-surface-alt rounded-lg p-4 border border-border-light">
+<span class="material-symbols-outlined text-brand-red mt-0.5">report_problem</span>
+<div>
+<p class="font-semibold text-text-primary text-sm">Any flaws or damage</p>
+<p class="text-xs text-text-secondary">Stains, tears, wear — be honest</p>
+</div>
+</div>
+<div class="flex items-start gap-3 bg-surface-alt rounded-lg p-4 border border-border-light">
+<span class="material-symbols-outlined text-brand-yellow mt-0.5">light_mode</span>
+<div>
+<p class="font-semibold text-text-primary text-sm">Good natural lighting</p>
+<p class="text-xs text-text-secondary">Flat lay on a clean, plain surface</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 6. Managing Listings -->
+<section id="manage" class="mb-14">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full ebay-gradient flex items-center justify-center text-white font-bold text-sm">6</div>
+<h2 class="text-2xl font-bold text-text-primary">Managing Your Listings</h2>
+</div>
+<div class="pl-[52px]">
+<p class="text-text-secondary leading-relaxed mb-4">Use <span class="cmd">/mylistings</span> to see and manage all your active listings. From there you can:</p>
+<ul class="space-y-2 text-text-secondary">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-brand-blue text-base mt-0.5">visibility</span> View all active listings with price and status</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-brand-yellow text-base mt-0.5">edit</span> Edit the title or price on any listing</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-brand-red text-base mt-0.5">cancel</span> End a listing early</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-brand-green text-base mt-0.5">campaign</span> Promote a listing for more visibility</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-brand-green text-base mt-0.5" style="font-variation-settings: 'FILL' 1;">sell</span> View sold listings and your earnings</li>
+</ul>
+</div>
+</section>
+
+<!-- 7. Tracking Sales -->
+<section id="sales" class="mb-14">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-brand-green flex items-center justify-center text-white font-bold text-sm">7</div>
+<h2 class="text-2xl font-bold text-text-primary">Tracking Your Sales</h2>
+</div>
+<div class="pl-[52px]">
+<p class="text-text-secondary leading-relaxed mb-4">Use <span class="cmd">/mysales</span> to get a quick snapshot of your activity:</p>
+<div class="grid sm:grid-cols-3 gap-3">
+<div class="bg-blue-50 rounded-xl p-4 text-center border border-brand-blue/10">
+<span class="material-symbols-outlined text-brand-blue text-2xl">inventory_2</span>
+<p class="text-sm font-bold text-text-primary mt-2">Active Listings</p>
+<p class="text-xs text-text-secondary">Items currently live</p>
+</div>
+<div class="bg-green-50 rounded-xl p-4 text-center border border-brand-green/10">
+<span class="material-symbols-outlined text-brand-green text-2xl" style="font-variation-settings: 'FILL' 1;">sell</span>
+<p class="text-sm font-bold text-text-primary mt-2">Total Sold</p>
+<p class="text-xs text-text-secondary">Items you've sold</p>
+</div>
+<div class="bg-yellow-50 rounded-xl p-4 text-center border border-brand-yellow/10">
+<span class="material-symbols-outlined text-brand-yellow text-2xl">payments</span>
+<p class="text-sm font-bold text-text-primary mt-2">Pending Payout</p>
+<p class="text-xs text-text-secondary">Amount owed to you</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 8. Notifications -->
+<section id="notifications" class="mb-14">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-brand-yellow flex items-center justify-center text-white font-bold text-sm">8</div>
+<h2 class="text-2xl font-bold text-text-primary">Getting Notified</h2>
+</div>
+<div class="pl-[52px]">
+<p class="text-text-secondary leading-relaxed mb-4">The bot keeps you in the loop via Telegram. You'll get notified when:</p>
+<ul class="space-y-2 text-text-secondary">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-brand-green text-base mt-0.5" style="font-variation-settings: 'FILL' 1;">sell</span> <strong>An item sells</strong> — with sale price and your payout amount</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-brand-blue text-base mt-0.5">local_offer</span> <strong>A buyer makes an offer</strong> — with the offer amount</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-brand-yellow text-base mt-0.5">chat</span> <strong>A buyer sends a message</strong> — questions about your item</li>
+</ul>
+<div class="bg-yellow-50 rounded-lg p-4 border border-brand-yellow/10 mt-4">
+<p class="text-sm text-text-secondary"><span class="material-symbols-outlined text-brand-yellow text-sm align-middle">info</span> <strong class="text-text-primary">Note:</strong> Replies to offers and buyer messages must be handled directly on eBay, as the platform doesn't allow third-party responses through the API.</p>
+</div>
+</div>
+</section>
+
+<!-- 9. Commands Reference -->
+<section id="commands" class="mb-14">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full ebay-gradient flex items-center justify-center text-white font-bold text-sm">9</div>
+<h2 class="text-2xl font-bold text-text-primary">Commands Reference</h2>
+</div>
+<div class="pl-[52px]">
+<div class="bg-surface-alt rounded-xl border border-border-light overflow-hidden">
+<table class="w-full text-sm">
+<thead>
+<tr class="bg-white border-b border-border-light">
+<th class="text-left py-3 px-4 font-bold text-text-primary">Command</th>
+<th class="text-left py-3 px-4 font-bold text-text-primary">What it does</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light">
+<tr><td class="py-2.5 px-4"><span class="cmd">/start</span></td><td class="py-2.5 px-4 text-text-secondary">Start the bot / request access</td></tr>
+<tr><td class="py-2.5 px-4"><span class="cmd">/list</span></td><td class="py-2.5 px-4 text-text-secondary">Begin a new listing</td></tr>
+<tr><td class="py-2.5 px-4"><span class="cmd">/done</span></td><td class="py-2.5 px-4 text-text-secondary">Finish uploading photos</td></tr>
+<tr><td class="py-2.5 px-4"><span class="cmd">/approve</span></td><td class="py-2.5 px-4 text-text-secondary">Accept all AI-suggested fields</td></tr>
+<tr><td class="py-2.5 px-4"><span class="cmd">/cancel</span></td><td class="py-2.5 px-4 text-text-secondary">Cancel the current listing</td></tr>
+<tr><td class="py-2.5 px-4"><span class="cmd">/mylistings</span></td><td class="py-2.5 px-4 text-text-secondary">View and manage your active listings</td></tr>
+<tr><td class="py-2.5 px-4"><span class="cmd">/mysales</span></td><td class="py-2.5 px-4 text-text-secondary">View sold items and pending payouts</td></tr>
+<tr><td class="py-2.5 px-4"><span class="cmd">/help</span></td><td class="py-2.5 px-4 text-text-secondary">Show available commands</td></tr>
+<tr><td class="py-2.5 px-4"><span class="cmd">/about</span></td><td class="py-2.5 px-4 text-text-secondary">Info about the bot</td></tr>
+<tr class="bg-blue-50/50"><td colspan="2" class="py-2 px-4 text-xs font-bold text-brand-blue uppercase tracking-wider">Override Commands</td></tr>
+<tr><td class="py-2.5 px-4"><span class="cmd">/title</span></td><td class="py-2.5 px-4 text-text-secondary">Override the suggested title</td></tr>
+<tr><td class="py-2.5 px-4"><span class="cmd">/description</span></td><td class="py-2.5 px-4 text-text-secondary">Override the description</td></tr>
+<tr><td class="py-2.5 px-4"><span class="cmd">/brand</span></td><td class="py-2.5 px-4 text-text-secondary">Override the brand</td></tr>
+<tr><td class="py-2.5 px-4"><span class="cmd">/size</span></td><td class="py-2.5 px-4 text-text-secondary">Override the size</td></tr>
+<tr><td class="py-2.5 px-4"><span class="cmd">/color</span></td><td class="py-2.5 px-4 text-text-secondary">Override the color</td></tr>
+<tr><td class="py-2.5 px-4"><span class="cmd">/category</span></td><td class="py-2.5 px-4 text-text-secondary">Override the category</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<!-- 10. FAQ -->
+<section id="faq" class="mb-14">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-brand-green flex items-center justify-center text-white font-bold text-sm">10</div>
+<h2 class="text-2xl font-bold text-text-primary">FAQ</h2>
+</div>
+<div class="pl-[52px] space-y-4">
+
+<div class="bg-surface-alt rounded-xl border border-border-light p-5">
+<h4 class="font-bold text-text-primary mb-2">How long does it take to list an item?</h4>
+<p class="text-sm text-text-secondary">About 30 seconds once you've taken photos. Send them, wait for AI, approve, done. You can list 6 items in the time it takes to manually list 1 on eBay.</p>
+</div>
+
+<div class="bg-surface-alt rounded-xl border border-border-light p-5">
+<h4 class="font-bold text-text-primary mb-2">What if the AI gets something wrong?</h4>
+<p class="text-sm text-text-secondary">No worries — you always review before anything goes live. Use override commands like <span class="cmd">/title</span>, <span class="cmd">/brand</span>, or <span class="cmd">/size</span> to correct any field before approving.</p>
+</div>
+
+<div class="bg-surface-alt rounded-xl border border-border-light p-5">
+<h4 class="font-bold text-text-primary mb-2">Can I list non-clothing items?</h4>
+<p class="text-sm text-text-secondary">Right now, EbayHelper is optimized for clothing and apparel. We may expand to other categories in the future.</p>
+</div>
+
+<div class="bg-surface-alt rounded-xl border border-border-light p-5">
+<h4 class="font-bold text-text-primary mb-2">When do I get paid?</h4>
+<p class="text-sm text-text-secondary">After your item sells and the buyer receives it, your payout is calculated (sale price minus eBay fees and our 10%). Payouts are arranged directly with the admin.</p>
+</div>
+
+<div class="bg-surface-alt rounded-xl border border-border-light p-5">
+<h4 class="font-bold text-text-primary mb-2">What if my item doesn't sell?</h4>
+<p class="text-sm text-text-secondary">No fees are charged unless your item sells. You can edit the price, promote the listing, or end it at any time using <span class="cmd">/mylistings</span>.</p>
+</div>
+
+<div class="bg-surface-alt rounded-xl border border-border-light p-5">
+<h4 class="font-bold text-text-primary mb-2">Why can't I use my own eBay account?</h4>
+<p class="text-sm text-text-secondary">Platforms like eBay require developer API authentication (OAuth credentials, app registration, API keys) to post listings programmatically. This process takes weeks and isn't available to most sellers. Our pre-authorized account lets you skip all of that.</p>
+</div>
+
+</div>
+</section>
+
+<!-- CTA -->
+<div class="text-center py-12 mb-8">
+<a href="https://t.me/Ebayhelper111bot" target="_blank" class="ebay-gradient text-white px-10 py-5 rounded-xl font-bold text-base uppercase tracking-widest inline-flex items-center gap-3 no-underline shadow-[0_4px_30px_rgba(0,100,210,0.3)] active:scale-95 transition-all">
+Start Listing Now
+<span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+
+</div>
+
+<!-- Footer -->
+<footer class="w-full border-t border-border-light pt-12 pb-8 bg-white">
+<div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="text-lg font-bold text-text-primary flex items-center gap-2"><span class="text-xl">🤖</span> EbayHelper Bot</div>
+<div class="text-text-secondary text-sm">&copy; 2026 EbayHelper Bot. Made for friends, powered by AI.</div>
+</div>
+<div class="flex gap-6">
+<a class="text-text-secondary hover:text-brand-blue transition-colors underline-offset-4 hover:underline text-sm" href="index.html">Home</a>
+<a class="text-text-secondary hover:text-brand-blue transition-colors underline-offset-4 hover:underline text-sm" href="https://t.me/Ebayhelper111bot" target="_blank">Telegram Support</a>
+</div>
+</div>
+</footer>
+</body></html>
