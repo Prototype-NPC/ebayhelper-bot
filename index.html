@@ -1,339 +1,367 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
+<html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>EbayHelper Bot - AI Powered Listing</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<script>
       tailwind.config = {
-        darkMode: "class",
         theme: {
           extend: {
             colors: {
-              "secondary-fixed-dim": "#a3d73a",
-              "surface-variant": "#353534",
-              "inverse-surface": "#e5e2e1",
-              "primary-fixed": "#d8e2ff",
-              "on-error": "#690005",
-              "tertiary-fixed": "#ffdad7",
-              "secondary-fixed": "#bef455",
-              "on-primary-fixed-variant": "#004493",
-              "outline": "#8c909f",
-              "on-tertiary": "#68000b",
-              "on-error-container": "#ffdad6",
-              "on-secondary-container": "#283b00",
-              "on-primary": "#002e68",
-              "tertiary-fixed-dim": "#ffb3ae",
-              "surface-container": "#201f1f",
-              "error-container": "#93000a",
-              "tertiary": "#ffb3ae",
-              "on-secondary-fixed-variant": "#364e00",
-              "on-tertiary-container": "#ffe1de",
-              "on-surface-variant": "#c2c6d5",
-              "primary": "#adc6ff",
-              "surface-tint": "#adc6ff",
-              "secondary": "#a3d73a",
-              "on-secondary": "#243600",
-              "inverse-on-surface": "#313030",
-              "error": "#ffb4ab",
-              "secondary-container": "#7cad01",
-              "on-surface": "#e5e2e1",
-              "tertiary-container": "#cb1c29",
-              "surface-dim": "#131313",
-              "on-secondary-fixed": "#131f00",
-              "on-background": "#e5e2e1",
-              "surface-container-highest": "#353534",
-              "primary-container": "#0064d2",
-              "surface-bright": "#3a3939",
-              "background": "#131313",
-              "on-primary-container": "#dfe7ff",
-              "surface-container-low": "#1c1b1b",
-              "on-tertiary-fixed-variant": "#930014",
-              "surface": "#131313",
-              "on-tertiary-fixed": "#410004",
-              "inverse-primary": "#005bc0",
-              "primary-fixed-dim": "#adc6ff",
-              "outline-variant": "#424753",
-              "surface-container-high": "#2a2a2a",
-              "surface-container-lowest": "#0e0e0e",
-              "on-primary-fixed": "#001a41"
+              "brand-blue": "#0064d2",
+              "brand-blue-dark": "#004493",
+              "brand-green": "#5cb836",
+              "brand-yellow": "#f5af02",
+              "brand-red": "#e53238",
+              "surface": "#ffffff",
+              "surface-alt": "#f7f9fc",
+              "surface-card": "#ffffff",
+              "text-primary": "#1a1a2e",
+              "text-secondary": "#5a607f",
+              "border-light": "#e5e7eb",
             },
             fontFamily: {
-              "headline": ["Inter", "sans-serif"],
-              "body": ["Inter", "sans-serif"],
-              "label": ["Inter", "sans-serif"]
+              "sans": ["Inter", "sans-serif"],
             },
-            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
           },
         },
       }
     </script>
 <style>
-      body { background-color: #131313; color: #e5e2e1; font-family: 'Inter', sans-serif; }
-      .glass-card { background: rgba(32, 31, 31, 0.6); backdrop-filter: blur(12px); }
-      .glow-blue { box-shadow: 0 0 20px rgba(0, 100, 210, 0.3); }
-      .glow-green { box-shadow: 0 0 20px rgba(163, 215, 58, 0.2); }
+      body { background-color: #ffffff; color: #1a1a2e; font-family: 'Inter', sans-serif; }
       .ebay-gradient { background: linear-gradient(135deg, #0064d2 0%, #004493 100%); }
-      .data-pulse { width: 8px; height: 8px; border-radius: 50%; display: inline-block; position: relative; }
-      .pulse-blue { background: #adc6ff; box-shadow: 0 0 8px #adc6ff; }
+      .glow-blue { box-shadow: 0 4px 24px rgba(0, 100, 210, 0.2); }
+      html { scroll-behavior: smooth; }
+      .step-connector { position: relative; }
+      .step-connector::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -2rem;
+        width: 2rem;
+        height: 2px;
+        background: linear-gradient(90deg, #0064d2, #5cb836);
+        display: none;
+      }
+      @media (min-width: 768px) {
+        .step-connector::after { display: block; }
+        .step-connector:last-child::after { display: none; }
+      }
+      .phone-shadow { box-shadow: 0 25px 60px rgba(0,0,0,0.12), 0 8px 20px rgba(0,0,0,0.08); }
     </style>
 </head>
-<body class="antialiased selection:bg-primary-container selection:text-white">
+<body class="antialiased">
+
 <!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl border-b border-white/10 h-16">
+<nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-border-light h-16">
 <div class="flex justify-between items-center max-w-7xl mx-auto px-6 h-full">
-<div class="text-2xl font-bold tracking-tighter text-[#0064d2]">
-                EbayHelper
-            </div>
+<a href="#" class="flex items-center gap-2 text-2xl font-bold tracking-tighter text-brand-blue no-underline">
+<span class="text-3xl">🤖</span>
+EbayHelper
+</a>
 <div class="hidden md:flex gap-8">
-<a class="font-['Inter'] font-bold tracking-[-0.04em] uppercase text-xs text-[#0064d2] border-b-2 border-[#0064d2] pb-1" href="#">Features</a>
-<a class="font-['Inter'] font-bold tracking-[-0.04em] uppercase text-xs text-white/60 hover:text-white transition-colors" href="#">Economics</a>
-<a class="font-['Inter'] font-bold tracking-[-0.04em] uppercase text-xs text-white/60 hover:text-white transition-colors" href="#">Guide</a>
+<a class="font-bold tracking-[-0.02em] uppercase text-xs text-brand-blue border-b-2 border-brand-blue pb-1 no-underline" href="#features">Features</a>
+<a class="font-bold tracking-[-0.02em] uppercase text-xs text-text-secondary hover:text-brand-blue transition-colors no-underline" href="#economics">Economics</a>
+<a class="font-bold tracking-[-0.02em] uppercase text-xs text-text-secondary hover:text-brand-blue transition-colors no-underline" href="#guide">Guide</a>
 </div>
 <div class="flex items-center gap-4">
-<a href="https://t.me/Ebayhelper111bot" target="_blank" class="flex items-center gap-2 bg-primary-container text-on-primary-container px-4 py-2 rounded-md font-bold text-xs uppercase tracking-wider active:scale-95 transition-transform no-underline">
-<span class="material-symbols-outlined text-sm">smart_toy</span>
-                    Launch Bot
-                </a>
+<a href="https://t.me/Ebayhelper111bot" target="_blank" class="flex items-center gap-2 ebay-gradient text-white px-4 py-2 rounded-lg font-bold text-xs uppercase tracking-wider active:scale-95 transition-transform no-underline">
+<span class="text-base">🤖</span>
+Launch Bot
+</a>
 </div>
 </div>
 </nav>
+
 <!-- Hero Section -->
-<section class="relative pt-32 pb-20 px-6 overflow-hidden">
+<section class="relative pt-32 pb-20 px-6 overflow-hidden bg-gradient-to-br from-white via-blue-50/40 to-green-50/30">
 <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
 <div class="z-10">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/20 mb-6">
-<span class="data-pulse pulse-blue"></span>
-<span class="label-sm font-medium tracking-wider text-on-surface-variant uppercase text-[10px]">Live AI Monitoring Active</span>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-50 border border-brand-green/20 mb-6">
+<span class="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
+<span class="font-medium tracking-wider text-brand-green uppercase text-[10px]">Bot Online</span>
 </div>
-<h1 class="text-5xl md:text-7xl font-bold tracking-[-0.04em] leading-tight mb-6">
-                    List on eBay in <span class="text-[#0064d2]">2 Minutes.</span> Powered by AI.
-                </h1>
-<p class="text-xl text-on-surface-variant/80 mb-10 max-w-lg font-medium">
-                    Built for small friend groups. Send photos, get a listing. Your items go up on our established eBay account with $10K+ in sales, 20+ orders, and a perfect 5-star rating.
-                </p>
-<div class="flex items-center gap-6 mb-8">
+<h1 class="text-5xl md:text-7xl font-bold tracking-[-0.04em] leading-tight mb-6 text-text-primary">
+List on eBay in <span class="text-brand-blue">2 Minutes.</span> Powered by AI.
+</h1>
+<p class="text-xl text-text-secondary mb-8 max-w-lg font-medium leading-relaxed">
+Built for small friend groups. Send photos, get a listing. Your items go up on our established eBay account with $10K+ in sales, 20+ orders, and a perfect 5-star rating.
+</p>
+<div class="flex items-center gap-6 mb-8 flex-wrap">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[#a3d73a] text-lg" style="font-variation-settings: 'FILL' 1;">verified</span>
-<span class="text-sm text-on-surface-variant"><strong class="text-[#a3d73a]">$10K+</strong> in sales</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[#a3d73a] text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-sm text-on-surface-variant"><strong class="text-[#a3d73a]">12</strong> five-star reviews</span>
+<span class="material-symbols-outlined text-brand-green text-lg" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-sm text-text-secondary"><strong class="text-brand-green">$10K+</strong> in sales</span>
 </div>
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[#a3d73a] text-lg" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
-<span class="text-sm text-on-surface-variant"><strong class="text-[#a3d73a]">20+</strong> orders</span>
+<span class="material-symbols-outlined text-brand-yellow text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm text-text-secondary"><strong class="text-brand-yellow">12</strong> five-star reviews</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-blue text-lg" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+<span class="text-sm text-text-secondary"><strong class="text-brand-blue">20+</strong> orders</span>
 </div>
 </div>
 <div class="flex flex-wrap gap-4">
-<a href="https://t.me/Ebayhelper111bot" target="_blank" class="ebay-gradient text-white px-8 py-4 rounded-md font-bold text-sm uppercase tracking-widest glow-blue active:scale-95 transition-all flex items-center gap-2 no-underline">
-                        Open in Telegram
-                        <span class="material-symbols-outlined">trending_flat</span>
+<a href="https://t.me/Ebayhelper111bot" target="_blank" class="ebay-gradient text-white px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-widest glow-blue active:scale-95 transition-all flex items-center gap-2 no-underline">
+Open in Telegram
+<span class="material-symbols-outlined">trending_flat</span>
 </a>
 </div>
 </div>
-<!-- Phone Mockup / Asymmetric Grid -->
+<!-- Phone Mockup -->
 <div class="relative">
-<div class="relative z-10 w-full max-w-[320px] mx-auto bg-surface-container-lowest border-[8px] border-surface-container-high rounded-[3rem] overflow-hidden aspect-[9/19] shadow-2xl">
-<div class="absolute top-0 w-full h-6 bg-surface-container-high flex justify-center items-end pb-1">
-<div class="w-16 h-1 bg-white/10 rounded-full"></div>
+<div class="relative z-10 w-full max-w-[300px] mx-auto bg-white border-[6px] border-gray-800 rounded-[3rem] overflow-hidden aspect-[9/19] phone-shadow">
+<div class="absolute top-0 w-full h-7 bg-gray-800 flex justify-center items-end pb-1.5 z-20">
+<div class="w-20 h-1 bg-gray-600 rounded-full"></div>
 </div>
-<!-- Telegram Simulation -->
-<div class="p-4 pt-10 flex flex-col gap-4">
-<div class="self-end bg-[#0064d2] p-1.5 rounded-xl rounded-tr-none max-w-[85%]">
-                            <img src="https://i.imgur.com/saYmp4f.png" alt="Jordan 1 Shoes" class="rounded-lg w-full object-cover" />
-                        </div>
-<div class="self-start bg-surface-container-high text-on-surface p-3 rounded-xl rounded-tl-none text-xs max-w-[80%]">
-                            Processing your item... 🤖
-                        </div>
-<div class="self-start bg-surface-container-high text-on-surface p-3 rounded-xl rounded-tl-none text-[10px] leading-relaxed border-l-2 border-secondary">
-<strong>AI Draft Ready:</strong><br/>
-                            Nike Air Jordan 1 Retro High OG 'Chicago'<br/>
-                            Size: 10.5 US<br/>
-                            Condition: New in Box<br/>
-                            Suggested Price: $185
-                        </div>
+<!-- Telegram Chat -->
+<div class="bg-[#e5ddd5] h-full p-3 pt-10 flex flex-col gap-3 overflow-hidden">
+<!-- User sends photo -->
+<div class="self-end bg-[#dcf8c6] p-1.5 rounded-xl rounded-tr-none max-w-[80%] shadow-sm">
+<img src="https://i.imgur.com/saYmp4f.png" alt="Jordan 1 Shoes" class="rounded-lg w-full object-cover" />
+<p class="text-[9px] text-gray-500 text-right mt-1 px-1">2:34 PM</p>
 </div>
+<!-- Bot processing -->
+<div class="self-start bg-white p-2.5 rounded-xl rounded-tl-none text-xs max-w-[80%] shadow-sm">
+<p class="text-gray-800">Processing your item... 🤖</p>
+<p class="text-[9px] text-gray-400 mt-1">2:34 PM</p>
 </div>
-<!-- Floating AI Identifiers -->
-<div class="absolute -top-10 -right-4 md:right-0 bg-surface-container-highest/80 backdrop-blur-md p-3 rounded-lg border border-secondary/30 flex items-center gap-2 glow-green animate-pulse">
-<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="label-sm text-secondary font-bold">Item: Jordan 1s</span>
-</div>
-<div class="absolute top-1/2 -left-12 bg-surface-container-highest/80 backdrop-blur-md p-3 rounded-lg border border-tertiary/30 flex items-center gap-2">
-<span class="material-symbols-outlined text-tertiary text-sm">straighten</span>
-<span class="label-sm text-tertiary font-bold">Size: 10.5</span>
-</div>
-<div class="absolute bottom-10 right-4 bg-surface-container-highest/80 backdrop-blur-md p-3 rounded-lg border border-primary/30 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-sm">payments</span>
-<span class="label-sm text-primary font-bold">Price: $185</span>
+<!-- Bot result -->
+<div class="self-start bg-white p-2.5 rounded-xl rounded-tl-none text-[10px] leading-relaxed shadow-sm max-w-[85%] border-l-3 border-brand-green" style="border-left: 3px solid #5cb836;">
+<p class="font-bold text-brand-blue mb-1">AI Draft Ready:</p>
+<p class="text-gray-700">Nike Air Jordan 1 Retro High OG 'Chicago'</p>
+<p class="text-gray-700">Size: 10.5 US</p>
+<p class="text-gray-700">Condition: New in Box</p>
+<p class="text-brand-green font-bold mt-1">Suggested Price: $185</p>
+<p class="text-[9px] text-gray-400 mt-1">2:35 PM</p>
 </div>
 </div>
 </div>
-<!-- Abstract Background Glows -->
-<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0064d2]/10 rounded-full blur-[120px] -z-10"></div>
-<div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#a3d73a]/5 rounded-full blur-[100px] -z-10"></div>
+<!-- Floating badges -->
+<div class="absolute -top-6 -right-2 md:right-2 bg-white p-2.5 rounded-lg border border-brand-green/30 flex items-center gap-2 shadow-lg animate-pulse">
+<span class="material-symbols-outlined text-brand-green text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-xs text-brand-green font-bold">Item Identified</span>
+</div>
+<div class="absolute top-1/2 -left-8 bg-white p-2.5 rounded-lg border border-brand-yellow/30 flex items-center gap-2 shadow-lg">
+<span class="material-symbols-outlined text-brand-yellow text-sm">straighten</span>
+<span class="text-xs text-brand-yellow font-bold">Size: 10.5</span>
+</div>
+<div class="absolute bottom-12 right-2 bg-white p-2.5 rounded-lg border border-brand-blue/30 flex items-center gap-2 shadow-lg">
+<span class="material-symbols-outlined text-brand-blue text-sm">payments</span>
+<span class="text-xs text-brand-blue font-bold">$185</span>
+</div>
+</div>
+</div>
+<!-- Background accents -->
+<div class="absolute top-20 right-0 w-[500px] h-[500px] bg-brand-blue/5 rounded-full blur-[120px] -z-10"></div>
+<div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-green/5 rounded-full blur-[100px] -z-10"></div>
 </section>
-<!-- How It Works -->
-<section class="py-24 px-6 bg-surface-container-lowest">
-<div class="max-w-7xl mx-auto">
-<div class="mb-16">
-<span class="label-sm font-bold tracking-[0.2em] text-[#a3d73a] uppercase mb-4 block">The Workflow</span>
-<h2 class="text-4xl md:text-5xl font-bold tracking-tight">Three steps to profit.</h2>
-</div>
-<div class="grid md:grid-cols-3 gap-8">
-<!-- Step 1 -->
-<div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:border-secondary-fixed-dim/30 transition-all group">
-<div class="w-12 h-12 flex items-center justify-center bg-secondary-fixed/10 rounded-lg mb-6 group-hover:bg-secondary-fixed/20 transition-colors">
-<span class="material-symbols-outlined text-secondary text-3xl">photo_camera</span>
-</div>
-<h3 class="text-xl font-bold mb-4">📸 Send Photos</h3>
-<p class="text-on-surface-variant leading-relaxed">Take clear photos of your item and send them directly to the Telegram bot. No apps to download.</p>
-</div>
-<!-- Step 2 -->
-<div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 transition-all group">
-<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-6 group-hover:bg-primary/20 transition-colors">
-<span class="material-symbols-outlined text-primary text-3xl">psychology</span>
-</div>
-<h3 class="text-xl font-bold mb-4">🤖 AI Does the Work</h3>
-<p class="text-on-surface-variant leading-relaxed">GPT-4 analyzes your images, extracts details, and writes optimized titles and descriptions for maximum SEO.</p>
-</div>
-<!-- Step 3 -->
-<div class="p-8 rounded-xl bg-surface-container-low border border-outline-variant/10 hover:border-secondary-container/30 transition-all group">
-<div class="w-12 h-12 flex items-center justify-center bg-secondary-container/10 rounded-lg mb-6 group-hover:bg-secondary-container/20 transition-colors">
-<span class="material-symbols-outlined text-secondary-container text-3xl">verified</span>
-</div>
-<h3 class="text-xl font-bold mb-4">✅ Live on eBay</h3>
-<p class="text-on-surface-variant leading-relaxed">Your item gets listed on our established eBay account. When it sells, you get paid minus a small commission.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Features Grid -->
-<section class="py-24 px-6">
+
+<!-- How It Works / Guide -->
+<section id="guide" class="py-24 px-6 bg-surface-alt">
 <div class="max-w-7xl mx-auto">
 <div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold mb-4 tracking-tighter">Built for Your Circle</h2>
-<p class="text-on-surface-variant">Your items, listed on a trusted account. We handle the selling so you don't have to.</p>
+<span class="font-bold tracking-[0.2em] text-brand-blue uppercase mb-4 block text-xs">How It Works</span>
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight text-text-primary">Three steps to profit.</h2>
+</div>
+
+<!-- Step-by-step visual flow -->
+<div class="grid md:grid-cols-3 gap-0 md:gap-0 max-w-5xl mx-auto relative">
+
+<!-- Connector line (desktop only) -->
+<div class="hidden md:block absolute top-16 left-[20%] right-[20%] h-0.5 bg-gradient-to-r from-brand-blue via-brand-yellow to-brand-green z-0"></div>
+
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center px-6 relative z-10">
+<div class="w-16 h-16 rounded-full ebay-gradient flex items-center justify-center text-white text-2xl font-bold mb-6 shadow-lg ring-4 ring-white">1</div>
+<div class="bg-white rounded-2xl p-6 shadow-md border border-border-light w-full mb-4">
+<div class="w-full aspect-[4/3] bg-blue-50 rounded-xl flex flex-col items-center justify-center mb-4 overflow-hidden">
+<span class="material-symbols-outlined text-brand-blue mb-2" style="font-size: 48px;">add_a_photo</span>
+<div class="flex gap-1 mt-1">
+<div class="w-8 h-8 bg-blue-100 rounded-md flex items-center justify-center"><span class="material-symbols-outlined text-brand-blue text-sm">image</span></div>
+<div class="w-8 h-8 bg-blue-100 rounded-md flex items-center justify-center"><span class="material-symbols-outlined text-brand-blue text-sm">image</span></div>
+<div class="w-8 h-8 bg-blue-100 rounded-md flex items-center justify-center"><span class="material-symbols-outlined text-brand-blue text-sm">image</span></div>
+</div>
+</div>
+<h3 class="text-lg font-bold mb-2 text-text-primary">Send Photos</h3>
+<p class="text-text-secondary text-sm leading-relaxed">Snap a few photos of your item and send them to the bot on Telegram. That's it.</p>
+</div>
+<div class="md:hidden w-0.5 h-8 bg-gradient-to-b from-brand-blue to-brand-yellow"></div>
+</div>
+
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center px-6 relative z-10">
+<div class="w-16 h-16 rounded-full bg-brand-yellow flex items-center justify-center text-white text-2xl font-bold mb-6 shadow-lg ring-4 ring-white">2</div>
+<div class="bg-white rounded-2xl p-6 shadow-md border border-border-light w-full mb-4">
+<div class="w-full aspect-[4/3] bg-yellow-50 rounded-xl flex flex-col items-center justify-center mb-4 p-4">
+<span class="material-symbols-outlined text-brand-yellow mb-2" style="font-size: 48px;">psychology</span>
+<div class="w-full space-y-2 mt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-green text-xs" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="h-2 bg-yellow-200 rounded-full flex-1"></div>
+<span class="text-[9px] text-text-secondary">Title</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-green text-xs" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="h-2 bg-yellow-200 rounded-full flex-1"></div>
+<span class="text-[9px] text-text-secondary">Price</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-brand-green text-xs" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="h-2 bg-yellow-200 rounded-full flex-1"></div>
+<span class="text-[9px] text-text-secondary">Details</span>
+</div>
+</div>
+</div>
+<h3 class="text-lg font-bold mb-2 text-text-primary">AI Builds the Listing</h3>
+<p class="text-text-secondary text-sm leading-relaxed">AI identifies the item, writes an SEO-optimized title, sets the price, and fills in all the details.</p>
+</div>
+<div class="md:hidden w-0.5 h-8 bg-gradient-to-b from-brand-yellow to-brand-green"></div>
+</div>
+
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center px-6 relative z-10">
+<div class="w-16 h-16 rounded-full bg-brand-green flex items-center justify-center text-white text-2xl font-bold mb-6 shadow-lg ring-4 ring-white">3</div>
+<div class="bg-white rounded-2xl p-6 shadow-md border border-border-light w-full mb-4">
+<div class="w-full aspect-[4/3] bg-green-50 rounded-xl flex flex-col items-center justify-center mb-4 p-4">
+<span class="material-symbols-outlined text-brand-green mb-1" style="font-size: 48px; font-variation-settings: 'FILL' 1;">storefront</span>
+<div class="flex items-center gap-1 mt-2 bg-white rounded-lg px-3 py-1.5 shadow-sm border border-green-200">
+<span class="material-symbols-outlined text-brand-green text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] font-bold text-brand-green">LIVE ON EBAY</span>
+</div>
+</div>
+<h3 class="text-lg font-bold mb-2 text-text-primary">Listed & Sold</h3>
+<p class="text-text-secondary text-sm leading-relaxed">Your item goes live on our trusted eBay account. When it sells, you get paid minus a small commission.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Features Grid -->
+<section id="features" class="py-24 px-6 bg-white">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 tracking-tighter text-text-primary">Built for Your Circle</h2>
+<p class="text-text-secondary">Your items, listed on a trusted account. We handle the selling so you don't have to.</p>
 </div>
 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 <!-- Feature 1 -->
-<div class="flex gap-4 p-6 bg-surface-container border border-outline-variant/10 rounded-lg hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-[#0064d2]">qr_code_scanner</span>
+<div class="flex gap-4 p-6 bg-surface-alt border border-border-light rounded-xl hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-brand-blue text-2xl mt-0.5">qr_code_scanner</span>
 <div>
-<h4 class="font-bold mb-1">Reads Size Tags</h4>
-<p class="text-sm text-on-surface-variant">Automatically extracts size, material, and brand from labels.</p>
+<h4 class="font-bold mb-1 text-text-primary">Reads Size Tags</h4>
+<p class="text-sm text-text-secondary">Automatically extracts size, material, and brand from labels.</p>
 </div>
 </div>
 <!-- Feature 2 -->
-<div class="flex gap-4 p-6 bg-surface-container border border-outline-variant/10 rounded-lg hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-[#a3d73a]">edit_note</span>
+<div class="flex gap-4 p-6 bg-surface-alt border border-border-light rounded-xl hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-brand-yellow text-2xl mt-0.5">edit_note</span>
 <div>
-<h4 class="font-bold mb-1">Auto-Titles</h4>
-<p class="text-sm text-on-surface-variant">SEO-optimized titles designed to drive clicks and bids.</p>
+<h4 class="font-bold mb-1 text-text-primary">Auto-Titles</h4>
+<p class="text-sm text-text-secondary">SEO-optimized titles designed to drive clicks and bids.</p>
 </div>
 </div>
 <!-- Feature 3 -->
-<div class="flex gap-4 p-6 bg-surface-container border border-outline-variant/10 rounded-lg hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-tertiary">sell</span>
+<div class="flex gap-4 p-6 bg-surface-alt border border-border-light rounded-xl hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-brand-green text-2xl mt-0.5">sell</span>
 <div>
-<h4 class="font-bold mb-1">Accept Offers</h4>
-<p class="text-sm text-on-surface-variant">Set minimum price floor for automatic offer acceptance.</p>
+<h4 class="font-bold mb-1 text-text-primary">Accept Offers</h4>
+<p class="text-sm text-text-secondary">Set minimum price floor for automatic offer acceptance.</p>
 </div>
 </div>
 <!-- Feature 4 -->
-<div class="flex gap-4 p-6 bg-surface-container border border-outline-variant/10 rounded-lg hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-[#0064d2]">campaign</span>
+<div class="flex gap-4 p-6 bg-surface-alt border border-border-light rounded-xl hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-brand-blue text-2xl mt-0.5">campaign</span>
 <div>
-<h4 class="font-bold mb-1">Promote Listings</h4>
-<p class="text-sm text-on-surface-variant">Instantly enroll new listings into eBay Ad campaigns.</p>
+<h4 class="font-bold mb-1 text-text-primary">Promote Listings</h4>
+<p class="text-sm text-text-secondary">Instantly enroll new listings into eBay Ad campaigns.</p>
 </div>
 </div>
 <!-- Feature 5 -->
-<div class="flex gap-4 p-6 bg-surface-container border border-outline-variant/10 rounded-lg hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-[#a3d73a]">monitoring</span>
+<div class="flex gap-4 p-6 bg-surface-alt border border-border-light rounded-xl hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-brand-yellow text-2xl mt-0.5">monitoring</span>
 <div>
-<h4 class="font-bold mb-1">Track Sales</h4>
-<p class="text-sm text-on-surface-variant">Daily Telegram reports on your sales and net profit.</p>
+<h4 class="font-bold mb-1 text-text-primary">Track Sales</h4>
+<p class="text-sm text-text-secondary">Daily Telegram reports on your sales and net profit.</p>
 </div>
 </div>
 <!-- Feature 6 -->
-<div class="flex gap-4 p-6 bg-surface-container border border-outline-variant/10 rounded-lg hover:bg-surface-container-high transition-colors">
-<span class="material-symbols-outlined text-tertiary">inventory_2</span>
+<div class="flex gap-4 p-6 bg-surface-alt border border-border-light rounded-xl hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-brand-green text-2xl mt-0.5" style="font-variation-settings: 'FILL' 1;">verified</span>
 <div>
-<h4 class="font-bold mb-1">Trusted Account</h4>
-<p class="text-sm text-on-surface-variant">Listed on an established account with $10K+ sales and a perfect rating.</p>
+<h4 class="font-bold mb-1 text-text-primary">Trusted Account</h4>
+<p class="text-sm text-text-secondary">Listed on an established account with $10K+ sales and a perfect rating.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- Fee Breakdown -->
-<section class="py-24 px-6 bg-surface-container-low">
+
+<!-- Fee Breakdown / Economics -->
+<section id="economics" class="py-24 px-6 bg-surface-alt">
 <div class="max-w-4xl mx-auto text-center">
 <div class="mb-12">
-<h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-4 italic">Transparent Economics</h2>
-<p class="text-on-surface-variant text-lg">All listings go on our account. A small commission covers the service and platform fees.</p>
+<h2 class="text-3xl md:text-5xl font-extrabold tracking-tighter mb-4 text-text-primary">Transparent Economics</h2>
+<p class="text-text-secondary text-lg">All listings go on our account. The bot commission covers AI API calls, server costs, and infrastructure — it's not cheap to run for free.</p>
 </div>
-<div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/20 shadow-xl">
-<div class="flex h-12 w-full rounded-full overflow-hidden mb-10">
-<div class="bg-[#cb1c29] w-[13%] flex items-center justify-center text-[10px] font-bold text-white uppercase tracking-tighter">eBay</div>
-<div class="bg-[#0064d2] w-[10%] flex items-center justify-center text-[10px] font-bold text-white uppercase tracking-tighter">Bot</div>
-<div class="bg-[#a3d73a] w-[77%] flex items-center justify-center text-[10px] font-bold text-on-secondary uppercase tracking-tighter">You Keep</div>
+<div class="bg-white p-8 rounded-2xl border border-border-light shadow-lg">
+<div class="flex h-14 w-full rounded-xl overflow-hidden mb-10">
+<div class="bg-brand-red w-[13%] flex items-center justify-center text-[10px] font-bold text-white uppercase tracking-tighter">eBay</div>
+<div class="bg-brand-blue w-[10%] flex items-center justify-center text-[10px] font-bold text-white uppercase tracking-tighter">Bot</div>
+<div class="bg-brand-green w-[77%] flex items-center justify-center text-[11px] font-bold text-white uppercase tracking-tighter">You Keep</div>
 </div>
 <div class="grid md:grid-cols-3 gap-6 text-left">
-<div class="p-4 rounded-lg bg-surface-container">
-<div class="text-tertiary font-bold mb-1 text-2xl">~13%</div>
-<div class="text-xs uppercase font-bold tracking-widest text-on-surface-variant mb-2">eBay Marketplace</div>
-<p class="text-xs text-on-surface-variant/60">Standard platform selling fees.</p>
+<div class="p-5 rounded-xl bg-red-50 border border-brand-red/10">
+<div class="text-brand-red font-bold mb-1 text-2xl">~13%</div>
+<div class="text-xs uppercase font-bold tracking-widest text-text-secondary mb-2">eBay Marketplace</div>
+<p class="text-xs text-text-secondary/70">Standard platform selling fees.</p>
 </div>
-<div class="p-4 rounded-lg bg-surface-container border-l-2 border-[#0064d2]">
-<div class="text-primary font-bold mb-1 text-2xl">10%</div>
-<div class="text-xs uppercase font-bold tracking-widest text-on-surface-variant mb-2">Helper Service</div>
-<p class="text-xs text-on-surface-variant/60">Commission for listing on our trusted account with AI drafting.</p>
+<div class="p-5 rounded-xl bg-blue-50 border-l-4 border-brand-blue">
+<div class="text-brand-blue font-bold mb-1 text-2xl">10%</div>
+<div class="text-xs uppercase font-bold tracking-widest text-text-secondary mb-2">Helper Service</div>
+<p class="text-xs text-text-secondary/70">Covers AI API costs, server hosting, and infrastructure to keep the bot running.</p>
 </div>
-<div class="p-4 rounded-lg bg-[#a3d73a]/5 border border-[#a3d73a]/20">
-<div class="text-[#a3d73a] font-bold mb-1 text-3xl">~77%</div>
-<div class="text-xs uppercase font-bold tracking-widest text-[#a3d73a] mb-2">Net Profit</div>
-<p class="text-xs text-[#a3d73a]/60">Paid out to you after the item sells.</p>
+<div class="p-5 rounded-xl bg-green-50 border border-brand-green/20">
+<div class="text-brand-green font-bold mb-1 text-3xl">~77%</div>
+<div class="text-xs uppercase font-bold tracking-widest text-brand-green mb-2">Net Profit</div>
+<p class="text-xs text-brand-green/60">Paid out to you after the item sells.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
+
 <!-- CTA Footer -->
-<section class="py-32 px-6 relative overflow-hidden">
+<section class="py-32 px-6 relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-green-50">
 <div class="max-w-4xl mx-auto text-center z-10 relative">
-<h2 class="text-4xl md:text-6xl font-bold tracking-[-0.04em] mb-12">Ready to scale?</h2>
-<a href="https://t.me/Ebayhelper111bot" target="_blank" class="ebay-gradient px-12 py-6 rounded-md font-extrabold text-lg md:text-xl uppercase tracking-[0.1em] shadow-[0_0_40px_rgba(0,100,210,0.4)] active:scale-95 transition-all mb-8 flex items-center gap-4 mx-auto group no-underline text-white">
-                Start Listing Now
-                <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+<h2 class="text-4xl md:text-6xl font-bold tracking-[-0.04em] mb-12 text-text-primary">Ready to start selling?</h2>
+<a href="https://t.me/Ebayhelper111bot" target="_blank" class="ebay-gradient px-12 py-6 rounded-xl font-extrabold text-lg md:text-xl uppercase tracking-[0.1em] shadow-[0_4px_30px_rgba(0,100,210,0.3)] active:scale-95 transition-all mb-8 inline-flex items-center gap-4 mx-auto group no-underline text-white">
+Start Listing Now
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
 </a>
-<p class="text-on-surface-variant flex items-center justify-center gap-2">
+<p class="text-text-secondary flex items-center justify-center gap-2 mt-6">
 <span class="material-symbols-outlined text-sm">group</span>
-                Invite-only for friends. Request access via the bot.
-            </p>
+Invite-only for friends. Request access via the bot.
+</p>
 </div>
-<!-- Decorative Elements -->
-<div class="absolute -bottom-24 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-[#0064d2] to-transparent opacity-50 blur-sm"></div>
 </section>
-<!-- Footer Component -->
-<footer class="w-full border-t border-white/5 pt-12 pb-8 bg-[#131313]">
+
+<!-- Footer -->
+<footer class="w-full border-t border-border-light pt-12 pb-8 bg-white">
 <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
 <div class="flex flex-col items-center md:items-start gap-2">
-<div class="text-lg font-bold text-white">EbayHelper Bot</div>
-<div class="font-['Inter'] body-md text-white/50 text-sm">© 2024 EbayHelper Bot. Made for friends, powered by AI.</div>
+<div class="text-lg font-bold text-text-primary flex items-center gap-2"><span class="text-xl">🤖</span> EbayHelper Bot</div>
+<div class="text-text-secondary text-sm">© 2024 EbayHelper Bot. Made for friends, powered by AI.</div>
 </div>
 <div class="flex gap-6">
-<a class="text-white/40 hover:text-[#adc6ff] transition-colors underline-offset-4 hover:underline text-sm" href="#">Terms of Service</a>
-<a class="text-white/40 hover:text-[#adc6ff] transition-colors underline-offset-4 hover:underline text-sm" href="#">Privacy Policy</a>
-<a class="text-white/40 hover:text-[#adc6ff] transition-colors underline-offset-4 hover:underline text-sm" href="https://t.me/Ebayhelper111bot" target="_blank">Telegram Support</a>
-<a class="text-white/40 hover:text-[#adc6ff] transition-colors underline-offset-4 hover:underline text-sm" href="#">API Docs</a>
+<a class="text-text-secondary hover:text-brand-blue transition-colors underline-offset-4 hover:underline text-sm" href="#">Terms of Service</a>
+<a class="text-text-secondary hover:text-brand-blue transition-colors underline-offset-4 hover:underline text-sm" href="#">Privacy Policy</a>
+<a class="text-text-secondary hover:text-brand-blue transition-colors underline-offset-4 hover:underline text-sm" href="https://t.me/Ebayhelper111bot" target="_blank">Telegram Support</a>
 </div>
 </div>
 </footer>
