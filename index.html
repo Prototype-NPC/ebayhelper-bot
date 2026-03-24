@@ -113,35 +113,70 @@ Open in Telegram
 </div>
 <!-- Phone Mockup -->
 <div class="relative mt-8 lg:mt-0">
-<div class="relative z-10 w-full max-w-[260px] md:max-w-[300px] mx-auto bg-white border-[6px] border-gray-800 rounded-[3rem] overflow-hidden aspect-[9/19] phone-shadow">
-<div class="absolute top-0 w-full h-7 bg-gray-800 flex justify-center items-end pb-1.5 z-20">
-<div class="w-20 h-1 bg-gray-600 rounded-full"></div>
+<div class="relative z-10 w-full max-w-[280px] md:max-w-[320px] mx-auto phone-shadow" style="border-radius: 2.5rem; overflow: hidden; background: #000; padding: 12px; padding-top: 0;">
+<!-- Status bar -->
+<div class="flex items-center justify-between px-6 pt-3 pb-1 bg-black text-white text-[10px] font-semibold" style="border-radius: 2.5rem 2.5rem 0 0;">
+<span>9:41</span>
+<div class="w-[80px] h-[28px] bg-black rounded-full mx-auto relative" style="margin-top: -2px;">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-[12px] h-[12px] rounded-full bg-[#1a1a2e] border-2 border-[#333]"></div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<svg width="16" height="11" viewBox="0 0 16 11" fill="white"><rect x="0" y="4" width="3" height="7" rx="0.5"/><rect x="4.5" y="2.5" width="3" height="8.5" rx="0.5"/><rect x="9" y="1" width="3" height="10" rx="0.5"/><rect x="13" y="0" width="3" height="11" rx="0.5"/></svg>
+<svg width="15" height="11" viewBox="0 0 15 11" fill="white"><path d="M7.5 3.5C9 3.5 10.3 4 11.3 5L12.5 3.8C11.1 2.5 9.4 1.7 7.5 1.7S3.9 2.5 2.5 3.8L3.7 5C4.7 4 6 3.5 7.5 3.5zM7.5 6.5C8.3 6.5 9 6.8 9.6 7.3L7.5 9.5L5.4 7.3C6 6.8 6.7 6.5 7.5 6.5z"/></svg>
+<svg width="25" height="11" viewBox="0 0 25 11" fill="white"><rect x="0" y="1" width="21" height="9" rx="2" stroke="white" stroke-width="1" fill="none"/><rect x="1.5" y="2.5" width="15" height="6" rx="1" fill="white"/><rect x="22" y="3.5" width="2.5" height="4" rx="1" fill="white" opacity="0.4"/></svg>
+</div>
+</div>
+<!-- Telegram header bar -->
+<div class="flex items-center gap-3 px-3 py-2 bg-[#517da2]">
+<svg width="10" height="16" viewBox="0 0 10 16" fill="white"><path d="M8 1L2 8l6 7" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<div class="w-8 h-8 rounded-full bg-[#5cb836] flex items-center justify-center text-white text-xs font-bold">🤖</div>
+<div>
+<p class="text-white text-xs font-semibold leading-tight">EbayHelper Bot</p>
+<p class="text-white/60 text-[9px] leading-tight">online</p>
+</div>
 </div>
 <!-- Telegram Chat -->
-<div class="h-full p-3 pt-10 flex flex-col gap-3 overflow-hidden" style="background: url('https://i.imgur.com/wBL2mhz.png') center/cover no-repeat;">
+<div class="flex flex-col gap-2.5 p-3 overflow-hidden" style="background: url('https://i.imgur.com/wBL2mhz.png') center/cover no-repeat; min-height: 340px;">
 <!-- User sends photo -->
-<div class="self-end bg-[#dcf8c6] p-1.5 rounded-xl rounded-tr-none max-w-[80%] shadow-sm">
-<img src="https://i.imgur.com/saYmp4f.png" alt="Jordan 1 Shoes" class="rounded-lg w-full object-cover" />
-<p class="text-[9px] text-gray-500 text-right mt-1 px-1">2:34 PM</p>
+<div class="self-end bg-[#e1ffc7] p-1.5 rounded-lg rounded-tr-none max-w-[75%] shadow-sm">
+<img src="https://i.imgur.com/saYmp4f.png" alt="Jordan 1 Shoes" class="rounded-md w-full object-cover" />
+<p class="text-[8px] text-[#5db050] text-right mt-0.5 px-1">2:34 PM ✓✓</p>
 </div>
 <!-- Bot processing -->
-<div class="self-start bg-white p-2.5 rounded-xl rounded-tl-none text-xs max-w-[80%] shadow-sm">
+<div class="self-start bg-white p-2 rounded-lg rounded-tl-none text-[11px] max-w-[75%] shadow-sm">
 <p class="text-gray-800">Processing your item... 🤖</p>
-<p class="text-[9px] text-gray-400 mt-1">2:34 PM</p>
+<p class="text-[8px] text-gray-400 mt-0.5">2:34 PM</p>
 </div>
 <!-- Bot result -->
-<div class="self-start bg-white p-2.5 rounded-xl rounded-tl-none text-[10px] leading-relaxed shadow-sm max-w-[85%] border-l-3 border-brand-green" style="border-left: 3px solid #5cb836;">
+<div class="self-start bg-white p-2.5 rounded-lg rounded-tl-none text-[10px] leading-relaxed shadow-sm max-w-[85%]" style="border-left: 3px solid #5cb836;">
 <p class="font-bold text-brand-blue mb-1">AI Draft Ready:</p>
 <p class="text-gray-700">Nike Air Jordan 1 Retro High OG 'Chicago'</p>
 <p class="text-gray-700">Size: 10.5 US</p>
 <p class="text-gray-700">Condition: New in Box</p>
 <p class="text-brand-green font-bold mt-1">Suggested Price: $185</p>
-<p class="text-[9px] text-gray-400 mt-1">2:35 PM</p>
+<p class="text-[8px] text-gray-400 mt-0.5">2:35 PM</p>
 </div>
+<!-- Telegram inline buttons -->
+<div class="self-start flex gap-1.5 max-w-[85%]">
+<div class="flex-1 bg-white rounded-lg py-2 px-3 text-center shadow-sm cursor-pointer hover:bg-gray-50">
+<span class="text-[11px] font-semibold text-[#3390ec]">✓ Post it!</span>
+</div>
+<div class="flex-1 bg-white rounded-lg py-2 px-3 text-center shadow-sm cursor-pointer hover:bg-gray-50">
+<span class="text-[11px] font-semibold text-[#3390ec]">Revise Listing</span>
+</div>
+</div>
+</div>
+<!-- Bottom input bar -->
+<div class="flex items-center gap-2 px-3 py-2 bg-[#f0f0f0]">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="#8e8e93"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+<div class="flex-1 bg-white rounded-full px-3 py-1.5 text-[11px] text-gray-400">Message</div>
+<svg width="22" height="22" viewBox="0 0 24 24" fill="#3390ec"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
 </div>
 </div>
 <!-- Floating badges - hidden on small mobile to prevent overflow -->
-<div class="hidden sm:flex absolute -top-8 -right-6 md:right-0 bg-white px-4 py-3 rounded-xl border border-brand-green/30 items-center gap-3 shadow-xl animate-pulse">
+<div class="hidden sm:flex absolute -top-6 -right-6 md:right-2 bg-white px-4 py-3 rounded-xl border border-brand-green/30 items-center gap-3 shadow-xl animate-pulse">
 <span class="material-symbols-outlined text-brand-green text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 <span class="text-sm text-brand-green font-bold">Item Identified</span>
 </div>
@@ -149,7 +184,7 @@ Open in Telegram
 <span class="material-symbols-outlined text-brand-yellow text-xl">straighten</span>
 <span class="text-sm text-brand-yellow font-bold">Size: 10.5</span>
 </div>
-<div class="hidden sm:flex absolute bottom-12 -right-4 bg-white px-4 py-3 rounded-xl border border-brand-blue/30 items-center gap-3 shadow-xl">
+<div class="hidden sm:flex absolute bottom-16 -right-6 bg-white px-4 py-3 rounded-xl border border-brand-blue/30 items-center gap-3 shadow-xl">
 <span class="material-symbols-outlined text-brand-blue text-xl">payments</span>
 <span class="text-sm text-brand-blue font-bold">$185</span>
 </div>
