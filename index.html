@@ -132,26 +132,26 @@ Open in Telegram
 <p class="text-[9px] text-[#5db050] text-right mt-0.5 px-1">2:34 PM ✓✓</p>
 </div>
 <!-- Bot processing -->
-<div class="self-start bg-white p-2.5 rounded-lg rounded-tl-none text-xs max-w-[75%] shadow-sm">
+<div class="self-start bg-white p-2.5 rounded-lg rounded-tl-none text-[13px] max-w-[75%] shadow-sm">
 <p class="text-gray-800">Processing your item... 🤖</p>
 <p class="text-[9px] text-gray-400 mt-0.5">2:34 PM</p>
 </div>
 <!-- Bot result -->
-<div class="self-start bg-white p-3 rounded-lg rounded-tl-none text-[11px] leading-relaxed shadow-sm max-w-[85%]" style="border-left: 3px solid #5cb836;">
-<p class="font-bold text-brand-blue mb-1 text-xs">AI Draft Ready:</p>
+<div class="self-start bg-white p-3 rounded-lg rounded-tl-none text-[12px] leading-relaxed shadow-sm max-w-[88%]" style="border-left: 3px solid #5cb836;">
+<p class="font-bold text-brand-blue mb-1 text-[13px]">AI Draft Ready:</p>
 <p class="text-gray-700">Nike Air Jordan 1 Retro High OG 'Chicago'</p>
 <p class="text-gray-700">Size: 10.5 US</p>
 <p class="text-gray-700">Condition: New in Box</p>
 <p class="text-brand-green font-bold mt-1">Suggested Price: $185</p>
 <p class="text-[9px] text-gray-400 mt-0.5">2:35 PM</p>
 </div>
-<!-- Telegram inline buttons - glassy, side by side, full width -->
-<div class="flex gap-[1px] w-full rounded-lg overflow-hidden shadow-sm">
-<div class="flex-1 py-2.5 text-center cursor-pointer" style="background: rgba(255,255,255,0.75); backdrop-filter: blur(8px);">
-<span class="text-xs font-semibold text-[#3390ec]">✓ Post it!</span>
+<!-- Telegram inline buttons - separated, opaque, centered -->
+<div class="flex gap-2 w-full">
+<div class="flex-1 py-3 text-center rounded-lg cursor-pointer shadow-sm" style="background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);">
+<span class="text-[13px] font-bold text-[#3390ec]">✓ Post it!</span>
 </div>
-<div class="flex-1 py-2.5 text-center cursor-pointer" style="background: rgba(255,255,255,0.75); backdrop-filter: blur(8px);">
-<span class="text-xs font-semibold text-[#3390ec]">Revise Listing</span>
+<div class="flex-1 py-3 text-center rounded-lg cursor-pointer shadow-sm" style="background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);">
+<span class="text-[13px] font-bold text-[#3390ec]">Revise Listing</span>
 </div>
 </div>
 </div>
@@ -167,33 +167,18 @@ Open in Telegram
 </div>
 </div>
 </div>
-<!-- Floating badges - absolute on desktop, row below phone on mobile -->
-<div class="hidden lg:flex absolute -top-6 right-2 bg-white px-4 py-3 rounded-xl border border-brand-green/30 items-center gap-3 shadow-xl animate-pulse">
-<span class="material-symbols-outlined text-brand-green text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="text-sm text-brand-green font-bold">Item Identified</span>
+<!-- Floating badges - always attached to phone container -->
+<div class="absolute -top-4 -right-2 sm:-right-4 lg:right-2 bg-white px-3 py-2 sm:px-4 sm:py-3 rounded-xl border border-brand-green/30 flex items-center gap-2 shadow-xl animate-pulse z-20">
+<span class="material-symbols-outlined text-brand-green text-base sm:text-xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-[10px] sm:text-sm text-brand-green font-bold">Item Identified</span>
 </div>
-<div class="hidden lg:flex absolute top-1/2 -left-14 bg-white px-4 py-3 rounded-xl border border-brand-yellow/30 items-center gap-3 shadow-xl">
-<span class="material-symbols-outlined text-brand-yellow text-xl">straighten</span>
-<span class="text-sm text-brand-yellow font-bold">Size: 10.5</span>
+<div class="absolute top-1/2 -translate-y-1/2 -left-2 sm:-left-8 lg:-left-14 bg-white px-3 py-2 sm:px-4 sm:py-3 rounded-xl border border-brand-yellow/30 flex items-center gap-2 shadow-xl z-20">
+<span class="material-symbols-outlined text-brand-yellow text-base sm:text-xl">straighten</span>
+<span class="text-[10px] sm:text-sm text-brand-yellow font-bold">Size: 10.5</span>
 </div>
-<div class="hidden lg:flex absolute bottom-16 -right-6 bg-white px-4 py-3 rounded-xl border border-brand-blue/30 items-center gap-3 shadow-xl">
-<span class="material-symbols-outlined text-brand-blue text-xl">payments</span>
-<span class="text-sm text-brand-blue font-bold">$185</span>
-</div>
-<!-- Mobile badges row -->
-<div class="flex lg:hidden justify-center gap-3 mt-5 flex-wrap">
-<div class="bg-white px-3 py-2 rounded-lg border border-brand-green/30 flex items-center gap-2 shadow-md">
-<span class="material-symbols-outlined text-brand-green text-base" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-<span class="text-xs text-brand-green font-bold">Item Identified</span>
-</div>
-<div class="bg-white px-3 py-2 rounded-lg border border-brand-yellow/30 flex items-center gap-2 shadow-md">
-<span class="material-symbols-outlined text-brand-yellow text-base">straighten</span>
-<span class="text-xs text-brand-yellow font-bold">Size: 10.5</span>
-</div>
-<div class="bg-white px-3 py-2 rounded-lg border border-brand-blue/30 flex items-center gap-2 shadow-md">
-<span class="material-symbols-outlined text-brand-blue text-base">payments</span>
-<span class="text-xs text-brand-blue font-bold">$185</span>
-</div>
+<div class="absolute bottom-12 -right-2 sm:-right-4 lg:-right-6 bg-white px-3 py-2 sm:px-4 sm:py-3 rounded-xl border border-brand-blue/30 flex items-center gap-2 shadow-xl z-20">
+<span class="material-symbols-outlined text-brand-blue text-base sm:text-xl">payments</span>
+<span class="text-[10px] sm:text-sm text-brand-blue font-bold">$185</span>
 </div>
 </div>
 </div>
