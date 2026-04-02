@@ -89,7 +89,7 @@ Get Extension
 <div class="pl-[52px] space-y-4">
 <p class="text-text-secondary leading-relaxed">FlipBot is a web app and Chrome extension that lets you sell your clothing on eBay, Grailed, Kijiji, and Facebook Marketplace without needing your own seller accounts, without dealing with listings, shipping policies, or payment setup.</p>
 <p class="text-text-secondary leading-relaxed">You upload photos of your item. Our AI reads the photos, writes the full listing for you, and posts it live across multiple marketplaces in under a minute. When it sells, you get paid your cut automatically.</p>
-<p class="text-text-secondary leading-relaxed font-medium text-text-primary">Think of it like a consignment store, except it's on eBay, it's automated, and you keep 77% of every sale.</p>
+<p class="text-text-secondary leading-relaxed font-medium text-text-primary">Think of it as a smart listing assistant — you own your accounts, you control everything, and the AI does all the tedious work.</p>
 </div>
 </section>
 
@@ -101,12 +101,12 @@ Get Extension
 <div class="w-10 h-10 rounded-full bg-brand-yellow flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
 <span class="material-symbols-outlined text-white text-lg">help</span>
 </div>
-<h2 class="text-2xl font-bold text-text-primary">Why We Use Our eBay Account (Not Yours)</h2>
+<h2 class="text-2xl font-bold text-text-primary">How Account Access Works (Your Privacy)</h2>
 </div>
 <div class="pl-[52px] space-y-4">
-<p class="text-text-secondary leading-relaxed">When you sell on eBay, the platform requires a verified seller account with an established history, connected payment method, shipping policies, and return policies already configured. Setting all of this up from scratch takes days, and new accounts get limited until they build trust with eBay.</p>
-<p class="text-text-secondary leading-relaxed">Our account already has all of this in place — verified seller status, shipping policies, payment processing, and a transaction history. When your item is listed through us, it benefits from that credibility immediately. Your listing goes live faster, gets better placement in search results, and buyers trust it more than a brand new account with zero history.</p>
-<p class="text-text-secondary leading-relaxed">This also means you never have to deal with eBay's seller interface, policy compliance, or account management. You just send photos and collect your money.</p>
+<p class="text-text-secondary leading-relaxed">When you click <strong>Connect</strong> in the FlipBot Chrome extension, it opens the marketplace's own login page (eBay, Grailed, Kijiji, Facebook) directly in your browser. You log in normally — the extension then caches your session cookies <strong>locally on your device only</strong>.</p>
+<p class="text-text-secondary leading-relaxed">We never receive, store, or transmit your credentials or session data to our servers. FlipBot uses your locally-stored session to post listings on your behalf — exactly the same as if you were doing it manually in the browser.</p>
+<p class="text-text-secondary leading-relaxed">Even if our servers were ever compromised, there is nothing to steal. Your login information never leaves your machine. A malicious actor would need physical access to your device to misuse your session.</p>
 </div>
 </section>
 
@@ -132,8 +132,8 @@ Get Extension
 </thead>
 <tbody class="divide-y divide-border-light">
 <tr><td class="py-3 px-4 font-semibold text-brand-red">eBay</td><td class="py-3 px-4 font-bold text-brand-red">~13%</td><td class="py-3 px-4 text-text-secondary">Platform fee — charged to all sellers, non-negotiable</td></tr>
-<tr><td class="py-3 px-4 font-semibold text-brand-blue">Us</td><td class="py-3 px-4 font-bold text-brand-blue">10%</td><td class="py-3 px-4 text-text-secondary">For running the account, managing listings, handling disputes</td></tr>
-<tr><td class="py-3 px-4 font-semibold text-brand-green">You</td><td class="py-3 px-4 font-bold text-brand-green text-lg">~77%</td><td class="py-3 px-4 text-text-secondary">Your payout for the item</td></tr>
+<tr><td class="py-3 px-4 font-semibold text-brand-blue">FlipBot</td><td class="py-3 px-4 font-bold text-brand-blue">10%</td><td class="py-3 px-4 text-text-secondary">AI API costs, market data, and server infrastructure</td></tr>
+<tr><td class="py-3 px-4 font-semibold text-brand-green">You</td><td class="py-3 px-4 font-bold text-brand-green text-lg">~77%</td><td class="py-3 px-4 text-text-secondary">Paid directly to your connected marketplace account</td></tr>
 </tbody>
 </table>
 </div>
@@ -373,7 +373,7 @@ Get Extension
 <h4 class="font-bold text-text-primary mb-3 flex items-center gap-2">
 <span class="material-symbols-outlined text-brand-green" style="font-variation-settings: 'FILL' 1;">sell</span> Sold Listings
 </h4>
-<p class="text-sm text-text-secondary">View your complete sales history with sale price, date, and your payout amount per item. Items show as "Pending" until the admin marks them paid.</p>
+<p class="text-sm text-text-secondary">View your complete sales history with sale price, date, and your earnings per item. Proceeds go directly to your connected marketplace accounts.</p>
 </div>
 
 <div class="bg-surface-alt rounded-xl border border-border-light p-5">
@@ -519,7 +519,7 @@ Get Extension
 
 <div class="bg-surface-alt rounded-xl border border-border-light p-5">
 <h4 class="font-bold text-text-primary mb-2">When do I get paid?</h4>
-<p class="text-sm text-text-secondary">After your item sells, the sale is logged and your payout is marked as pending. The admin sends payouts directly. You can always check your owed amount with <span class="cmd">/mysales</span>.</p>
+<p class="text-sm text-text-secondary">After your item sells, the proceeds go directly to your connected marketplace account (eBay Payments, Grailed wallet, etc.). Check your earnings any time with <span class="cmd">/mysales</span>.</p>
 </div>
 
 <div class="bg-surface-alt rounded-xl border border-border-light p-5">
